@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.demo.member.repository.MemberMapper">
+
+    <!-- 회원가입 (INSERT) -->
+    <insert id="save" parameterType="org.example.demo.member.entity.MemberVO">
+        INSERT INTO GAMEBBS_USER.USER_INFO (ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT)
+        VALUES (#{id, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, #{phoneNumber, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, SYSDATE)
+    </insert>
+
+
+    <!-- ID로 회원 정보 조회(SELECT) -->
+    <select id="getMemberById" parameterType="String" resultType="org.example.demo.member.entity.MemberVO">
+        SELECT ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT
+        FROM GAMEBBS_USER.USER_INFO
+        WHERE ID = #{id}
+    </select>
+
+</mapper>
