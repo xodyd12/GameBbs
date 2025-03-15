@@ -12,4 +12,7 @@ public interface MemberMapper {
 
     //회원 정보 단일 조회
     MemberVO findMember(@Param("id") String id);
+
+    //아이디 중복 여부 확인
+    MemberVO isIdAvailable(@Param("id") String id);
 }

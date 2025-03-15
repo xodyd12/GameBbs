@@ -17,5 +17,13 @@
         FROM GAMEBBS_USER.USER_INFO
         WHERE ID = #{id}
     </select>
+    
+    <!-- 회원 가입시 ID 중복 여부 확인 -->
+    <select id="isIdAvailable" parameterType="String" resultType="org.example.demo.member.entity.MemberVO">
+        SELECT ID
+        FROM GAMEBBS_USER.USER_INFO
+        WHERE ID = #{id}
+
+    </select>
 
 </mapper>
