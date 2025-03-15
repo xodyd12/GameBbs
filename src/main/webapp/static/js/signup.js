@@ -79,7 +79,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: "/login/checkId",  // 절대 경로 사용
+            url: "/checkId",  // 절대 경로 사용
             data: { id: userId },
             success: function (response) {
                 if (response === "available") {
