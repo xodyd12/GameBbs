@@ -41,20 +41,22 @@
     <div id="company_text" class="company_text">
         <ul id="main_con">
             <li id="main_con1">
-                <a href="/mainPage">
+                <a href="/mainPage/companyProfile">
                     <h5>회사소개</h5>
                 </a>
             </li>
+
             <li id="main_con2">
                 <a href="/mainPage">
                     <h5>사업안내</h5>
                 </a>
             </li>
+            <!-- 2025.03.26 서비스 분야 제거
             <li id="main_con3">
                 <a href="/mainPage">
                     <h5>서비스 분야</h5>
                 </a>
-            </li>
+            </li> -->
             <li id="main_con4">
                 <a href="/mainPage">
                     <h5>공지사항</h5>

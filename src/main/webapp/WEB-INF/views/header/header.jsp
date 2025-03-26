@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Custom JSP</title>
+    <title>GnCompony</title>
 </head>
 <body>
 <div id="sh_nav_wrap" class="mainLogo">
@@ -11,27 +11,28 @@
     <!-- sh_nav [s] -->
     <ul id="sh_nav">
         <li class="menu-item active">
-            <a href="/mainPage">회사소개</a>
+            <a href="/mainPage/companyProfile">회사소개</a>
             <ul class="sh_nav_s">
             </ul>
         </li>
         <li class="menu-item">
-            <a href="">사업안내</a>
+            <a href="/mainPage">사업안내</a>
+            <ul class="sh_nav_s">
+            </ul>
+        </li>
+        <!-- 2025.03.26 서비스 분야 제거
+        <li class="menu-item">
+            <a href="/mainPage">서비스 분야</a>
+            <ul class="sh_nav_s">
+            </ul>
+        </li> -->
+        <li class="menu-item">
+            <a href="/mainPage">공지사항</a>
             <ul class="sh_nav_s">
             </ul>
         </li>
         <li class="menu-item">
-            <a href="">서비스 분야</a>
-            <ul class="sh_nav_s">
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a href="">공지사항</a>
-            <ul class="sh_nav_s">
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a href="">고객센터</a>
+            <a href="/mainPage">고객센터</a>
             <ul class="sh_nav_s">
             </ul>
         </li>

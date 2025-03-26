@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan(basePackages = "org.example.demo.member.repository")
+@MapperScan(basePackages = "org.example.demo.board.repository")
 public class DemoApplication {
 
     public static void main(String[] args) {

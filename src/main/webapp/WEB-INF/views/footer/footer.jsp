@@ -21,11 +21,12 @@
 
         <div class="ServiceLayer">
             <div class="footerRow">
-                <a href="http://localhost:9090" class="footerItem">회사소개</a>
-                <a href="http://localhost:9090" class="footerItem">사업안내</a>
-                <a href="http://localhost:9090" class="footerItem">서비스 분야</a>
-                <a href="http://localhost:9090" class="footerItem">공지사항</a>
-                <a href="http://localhost:9090" class="footerItem">고객센터</a>
+                <a href="/mainPage/companyProfile" class="footerItem">회사소개</a>
+                <a href="/mainPage" class="footerItem">사업안내</a>
+                 <!-- 2025.03.26 서비스 분야 제거
+                 <a href="/mainPage" class="footerItem">서비스 분야</a> -->
+                <a href="/mainPage" class="footerItem">공지사항</a>
+                <a href="/mainPage" class="footerItem">고객센터</a>
             </div>
         </div>
     </div>
