@@ -1,0 +1,108 @@
+/* 방문하지 않은 링크의 색상을 검정색으로 설정 */
+a:link {
+    color: black;
+}
+
+/* 방문한 링크의 색상도 검정색으로 설정 */
+a:visited {
+    color: black;
+}
+a{
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+
+/*헤더 존*/
+/* 네비게이션 전체 영역을 가로 정렬 */
+#sh_nav_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+    /* 기존 스타일 유지 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 90px;
+    background-color: #fff; /* 배경색 설정 */
+}
+
+/* 메인 로고 스타일 */
+#sh_top_logo {
+    margin-right: 20px; /* 네비게이션과 간격 */
+}
+
+/* 네비게이션 바 가로 정렬 */
+#sh_nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 메뉴 항목 스타일 */
+#sh_nav .menu-item {
+    position: relative;
+    padding: 15px 20px;
+}
+
+#sh_nav .menu-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* 서브 메뉴 스타일 */
+#sh_nav .sh_nav_s {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+}
+
+
+
+#sh_nav .sh_nav_s li {
+    padding: 10px;
+}
+
+#sh_nav .sh_nav_s li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* 메뉴 호버 시 서브메뉴 표시 */
+#sh_nav .menu-item:hover .sh_nav_s {
+    display: block;
+}
+
+/* 메뉴 간 간격 조정 */
+#sh_nav .menu-item + .menu-item {
+    margin-left: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item a {
+    margin-right: 10px; /* 링크와 인사말 사이의 간격 조절 */
+}
+
+.user-greeting {
+    font-size: 14px; /* 인사말의 폰트 크기 조절 */
+    color: #333; /* 인사말의 색상 조절 */
+}

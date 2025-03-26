@@ -18,7 +18,7 @@ public class SignUpRequestDTO {
     private String password;
     private String phoneNumber;
     private String email;
-
+    private String nickName;
     //엔터티로 변환하는 유틸 메서드
     public MemberVO toEntity(PasswordEncoder encoder){
         return MemberVO.builder()
@@ -26,6 +26,7 @@ public class SignUpRequestDTO {
                 .password(encoder.encode(this.password))
                 .phoneNumber(phoneNumber)
                 .email(email)
+                .nickName(nickName)
                 .build();
     }
 }

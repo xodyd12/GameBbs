@@ -49,4 +49,9 @@ public class MemberService {
     public String findPassword(String id, String email, String phoneNumber){
         return memberMapper.findPassword(id, email, phoneNumber);
     }
+
+    //닉네임 가져오기
+    public String findByNickName(String id){
+        return memberMapper.findByNickName(id);
+    }
 }

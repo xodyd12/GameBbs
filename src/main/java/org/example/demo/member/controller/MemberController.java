@@ -19,6 +19,11 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    @GetMapping("/")
+    public String redirectToMainPage() {
+        return "redirect:/mainPage";
+    }
+
     // 로그인 페이지 이동
     @GetMapping("/login")
     public String loginPage() {
@@ -39,26 +44,16 @@ public class MemberController {
 
         if (isAuthenticated) {
             HttpSession session = request.getSession();
+            String userName = memberService.findByNickName(id);
             session.setAttribute("loginUser", id); // 세션에 사용자 ID 저장
-            return "redirect:/home"; // 로그인 성공 시 홈 페이지로 이동
+            session.setAttribute("UserName", userName);
+            return "redirect:/mainPage"; // 로그인 성공 시 홈 페이지로 이동
         } else {
             model.addAttribute("loginError", "아이디 또는 비밀번호가 올바르지 않습니다.");
             return "loginPage/login"; // 로그인 실패 시 다시 로그인 페이지
         }
     }
 
-    // 홈 페이지 (로그인 후 이동)
-    @GetMapping("/home")
-    public String homePage(HttpSession session, Model model) {
-        String loginUser = (String) session.getAttribute("loginUser");
-
-        if (loginUser == null) {
-            return "redirect:loginPage/login"; // 로그인되지 않았다면 로그인 페이지로 이동
-        }
-
-        model.addAttribute("loginUser", loginUser);
-        return "home"; // WEB-INF/views/home.jsp
-    }
 
     // 회원가입 페이지 반환 (JSP)
     @GetMapping("login/sign-up")
@@ -71,7 +66,7 @@ public class MemberController {
     public String signUp(@ModelAttribute SignUpRequestDTO dto) {
         log.info("회원가입 요청: {}", dto.getId());
         memberService.save(dto);
-        return "redirect:loginPage/login"; // 회원가입 후 로그인 페이지로 이동
+        return "redirect:/login"; // 회원가입 후 로그인 페이지로 이동
     }
 
     // AJAX로 아이디 중복 여부 처리
@@ -87,7 +82,7 @@ public class MemberController {
     public String logout(HttpSession session) {
         session.invalidate(); // 세션 무효화(로그아웃)
         log.info("로그아웃 성공!");
-        return "redirect:loginPage/login"; // 로그인 페이지로 이동
+        return "redirect:/mainPage"; //메인 페이지로 이동
     }
 
     // 아이디 찾기 페이지 이동
@@ -97,6 +92,7 @@ public class MemberController {
     }
 
     //아이디 찾기 페이지 이동
+
     @PostMapping("find-id")
     public List<String> findId(@RequestParam("email") String email, @RequestParam("phoneNumber") String phoneNumber, Model model){
         List<String> findId = memberService.findIdByEmailAndPhoneNumber(email, phoneNumber);

@@ -6,14 +6,21 @@
 
     <!-- 회원가입 (INSERT) -->
     <insert id="save" parameterType="org.example.demo.member.entity.MemberVO">
-        INSERT INTO GAMEBBS_USER.USER_INFO (ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT)
-        VALUES (#{id, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, #{phoneNumber, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, SYSDATE)
+        INSERT INTO GAMEBBS_USER.USER_INFO (ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT, NICKNAME)
+        VALUES (#{id, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, #{phoneNumber, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, SYSDATE, #{nickName, jdbcType=VARCHAR})
     </insert>
 
 
     <!-- ID로 회원 정보 조회(SELECT) -->
     <select id="findById" parameterType="String" resultType="org.example.demo.member.entity.MemberVO">
-        SELECT ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT
+        SELECT ID, PASSWORD, PHONE_NUMBER, EMAIL, CREATED_AT, NICKNAME
+        FROM GAMEBBS_USER.USER_INFO
+        WHERE ID = #{id}
+    </select>
+
+    <!-- 아이디로 회원 닉네임 찾기 -->
+    <select id="findByNickName" parameterType="String" resultType="String">
+        SELECT NICKNAME
         FROM GAMEBBS_USER.USER_INFO
         WHERE ID = #{id}
     </select>

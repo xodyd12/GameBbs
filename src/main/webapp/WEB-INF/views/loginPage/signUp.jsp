@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>회원가입 페이지</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${pageContext.request.contextPath}/static/js/signup.js"></script>
+    <script src="<c:url value='/js/signUp.js' />"></script>
 </head>
 <body>
         <div id="form-wrapper">
@@ -33,6 +33,12 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="nickName" class="form-label">*성함</label>
+                    <input type="text" class="form-control" id="nickName" name="nickName">
+                    <div id="nickNameHelp" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
                     <label for="phoneNumber" class="form-label">*휴대폰 번호</label>
                     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
                     <div id="pnHelp" class="form-text"></div>
@@ -43,6 +49,7 @@
                     <input type="text" class="form-control" id="email" name="email">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
+
 
                 <div class="container">
                     <button id="sign_ok" type="submit" class="btn btn-primary">가입하기</button>

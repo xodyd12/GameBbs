@@ -19,5 +19,6 @@ public class MemberVO {
     private String phoneNumber; //유저 폰 번호
     private String email; // 유저 이메일
     private LocalDateTime createdAt; //유저 생성 일자
+    private String nickName; //유저 이름
 
 }
